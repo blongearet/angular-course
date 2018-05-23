@@ -10,8 +10,8 @@ It also has the advantage to avoid any `sudo` problem by installing native node 
 2. Copy [Install script](https://github.com/creationix/nvm#install-script) and execute it in a terminal
 3. Type in a terminal:
     1. `nvm -v` to check if everything is well installed
-    2. `nvm install v6` to install the latest v6 of node
-    3. `nvm use v6` to use it
+    2. `nvm install v9` to install the latest v6 of node
+    3. `nvm use v9` to use it
 
 ## Commands
 
