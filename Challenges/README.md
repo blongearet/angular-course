@@ -4,6 +4,8 @@ List all our challenges for this Angular 2 course
 
 ## 01 - Introduction
 
+[:octocat: step-00 (ou master)](https://github.com/blongearet/angular-course-app)
+
 No Challenge here but some commands to type in a terminal.
 
 1. Install NVM (https://github.com/creationix/nvm#install-script)
@@ -33,7 +35,7 @@ Take a look at https://yarnpkg.com to get a faster Node Package Manager
 
 ## 02 - TypeScript
 
-Challenge can be found in a separated github repository [blongearet/angular-course-typescript](https://github.com/blongearet/angular-course-typescript)
+:octocat: Challenge can be found in a separated github repository [blongearet/angular-course-typescript](https://github.com/blongearet/angular-course-typescript)
 
 Take a look at the slides and use Internet wonderful search engine to do all the exercices.
 
@@ -55,10 +57,12 @@ You have to fix all tests (should be green in the terminal window) by updating p
 
 ## 03 - Introduction to Components
 
+*Start from [master branch](https://github.com/blongearet/angular-course-app/tree/master)*
+
 **Main idea: use ng generate and be familiar with basic component**
 
-1. Create a component called `header`
-`ng generate component header`
+1. Create a component called `header` under the layout folder
+`ng generate component layout/header`
 2. Add the selector element `<app-header></<app-header>` into the main HTML `app.component.html`
 3. Play with template to see what's going on
   a. Add link to welcome & products page
@@ -76,19 +80,22 @@ src/
     shared/
       ui/
         star/
+    welcome/
 ```
+
+**SOLUTION:** [:octocat: step-03 branch](https://github.com/blongearet/angular-course-app/pull/1/files)
 
 ## 04 - Templates, Interpolation & Directives
 
-*Working based on 03 source code*
+*Start from [step-03 branch](https://github.com/blongearet/angular-course-app/tree/step-03)*
 
 **Main idea: create a product list view by using *ngIf & *ngFor directives**
 
 1. Use the ProductListComponent previously creating by add the selector element into the `app.component.html`
-3. Work on the product-list component class
+2. Work on the product-list component class
 
     1. Expose a public property boolean to display/hide all images
-    2. Expose a public collection of product
+    2. Expose a public collection of product following the Product interface
 
 ```
     products = [
@@ -145,17 +152,29 @@ src/
     ]
 ```
 
-4. Work on the product-list component template
+3. Let's display products as a list of product
 
     1. Add a table to display product (display image url as text)
     2. Use `*ngIf` directive to show the table if there is at least one product in the array (you can use the else part to display a message in case of no product: [doc](https://angular.io/api/common/NgIf#showing-an-alternative-template-using-else))
     3. Use `*ngFor` directive on `<tr>` element to repeat this element as many times as products in the array
-    4. Add a button to show/hide all images on the page (by using `(click)="toggleImage()"` for example)
 
-5. OPTIONAL:
+4. Add a button to show/hide all images on the page (by using `(click)="toggleImage()"` for example)
 
-    1. Add multiple images per product with a caroussel
-    2. Implement a search field to filter products shown in the table
+5. Implement a search field to filter products shown in the table. To bind an input with a variable you should do:
+
+    1. Add the `FormModule` to your `AppModule` by import `FormModule` from `@angular/forms`
+    2. Bind the value from the ProductListComponent (like `searchTerm`) to the input field by using `ngModel` directive
+
+`<input [(ngModel)]="searchTerm" type="text />`
+
+**SOLUTION:** [:octocat: step-04 branch](https://github.com/blongearet/angular-course-app/pull/2/files)
+
+6. Go further
+
+    1. Do a zoom by click on an image!
+    2. Allow a product to have multiple images and display them as a caroussel with navigation buttons
+
+**SOLUTION "GO FURTHER":** [:octocat: step-04-more branch](https://github.com/blongearet/angular-course-app/pull/4/files)
 
 ## 05 - Data Binding & Pipes
 
