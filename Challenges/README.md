@@ -33,21 +33,23 @@ Take a look at https://yarnpkg.com to get a faster Node Package Manager
 
 ## 02 - TypeScript
 
-Challenge is in the folder `./TypeScript/src`
+Challenge can be found in a separated github repository [blongearet/angular-course-typescript](https://github.com/blongearet/angular-course-typescript)
 
-take a look at the slides and use Internet to do all the exercices.
+Take a look at the slides and use Internet wonderful search engine to do all the exercices.
 
 ### How to
 
 ```
 # Dans un premier terminal
-cd GIT_PROJECT/TypeScript
-npm run start
+cd GIT_PROJECT_PATH/TypeScript
+npm run start-01
 
 # Dans un second terminal
-cd GIT_PROJECT/TypeScript
-npm run test
+cd GIT_PROJECT_PATH/TypeScript
+npm run test-01
 ```
+
+(and update the 01 by the targeted step)
 
 You have to fix all tests (should be green in the terminal window) by updating part specified by a `// _` or a `_`.
 
@@ -62,6 +64,19 @@ You have to fix all tests (should be green in the terminal window) by updating p
   a. Add link to welcome & products page
   b. Add code between `<app-header>` and `</<app-header>`
   c. be genious :D
+4. Repeat step 1. with all required component for the application following this architecture:
+```
+src/
+  app/
+    layout/
+      header/
+    product/
+      product-list/
+      product-detail/
+    shared/
+      ui/
+        star/
+```
 
 ## 04 - Templates, Interpolation & Directives
 
@@ -69,12 +84,14 @@ You have to fix all tests (should be green in the terminal window) by updating p
 
 **Main idea: create a product list view by using *ngIf & *ngFor directives**
 
-1. Create a component called `product-list`
-2. Add the selector element into the `app.component.html`
+1. Use the ProductListComponent previously creating by add the selector element into the `app.component.html`
 3. Work on the product-list component class
-  a. Add an initial collection of product
-  ```
-  products = [
+
+    1. Expose a public property boolean to display/hide all images
+    2. Expose a public collection of product
+
+```
+    products = [
         {
             "id": 1,
             "productName": "Leaf Rake",
@@ -126,13 +143,19 @@ You have to fix all tests (should be green in the terminal window) by updating p
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
         }
     ]
-  ```
+```
+
 4. Work on the product-list component template
-  a. Add a table to display product (display image url as text)
-  b. Use `*ngIf` directive to show the table if there is no product in the array
-  c. Use `*ngFor` directive on `<tr>` element to repeat this element as many times as products in the array
-  d. Add a button to show/hide all images on the page
-5. OPTIONAL: Add multiple images per product with a caroussel
+
+    1. Add a table to display product (display image url as text)
+    2. Use `*ngIf` directive to show the table if there is at least one product in the array (you can use the else part to display a message in case of no product: [doc](https://angular.io/api/common/NgIf#showing-an-alternative-template-using-else))
+    3. Use `*ngFor` directive on `<tr>` element to repeat this element as many times as products in the array
+    4. Add a button to show/hide all images on the page (by using `(click)="toggleImage()"` for example)
+
+5. OPTIONAL:
+
+    1. Add multiple images per product with a caroussel
+    2. Implement a search field to filter products shown in the table
 
 ## 05 - Data Binding & Pipes
 
