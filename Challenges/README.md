@@ -189,13 +189,15 @@ src/
 
 ## 06 - More on components: Nested Component
 
-*Working based on 06 source code*
+*Start from [step-05 branch](https://github.com/blongearet/angular-course-app/tree/step-05)*
 
-1. Create a `starComponent` which display the rating with stars
-2. Use this component into our `productListComponent` and place it next to existing `product.starRating`
-3. Set-up `rating` input into `starComponent`
-4. Set-up `ratingClicked` output into `starComponent`
-5. Listen `ratingClicked` event from `ProductListComponent`
+**ℹ We'll work on the created component `starComponent` which display the rating with stars**
+
+1. Use this component as a Nested Component into your `product-list.component.html` to replace the `{{ product.starRating }}`
+2. Create an `@Input` property called `rating` into the `starComponent`
+3. Create an `@Output` property called `ratingClicked` into the `starComponent` which will return the new value of the rating.
+4. Listen the created `ratingClicked` event into the `ProductListComponent` to update the value into the component. 
+
 
 <details><summary>More later 👀</summary>
 
