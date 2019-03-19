@@ -176,27 +176,16 @@ src/
 
 **SOLUTION "GO FURTHER":** [:octocat: step-04-more branch](https://github.com/blongearet/angular-course-app/pull/4/files)
 
-## 05 - Data Binding & Pipes
+## 05 - Pipes
 
-*Working based on 04 source code*
+*Start from [step-04 branch](https://github.com/blongearet/angular-course-app/tree/step-04)*
 
-1. Display image as `<img src...` into the table with a *property binding* to `product.imageUrl` 
-2. Insert a button at the top of the table and set an *event binding* to display and hide all images
-The text should be adapted to the current stage: `Show the images` or `Hide the images`
-3. Develop the filter two-way binding (input text <=> display) (*use banana in the box `[()]`*)
+1. Create a pipe called `productSearch` into the folder `app/src/product`
+2. Copy the content of the method `getFilteredProducts()` into the Pipe and adapt it to the `transform` method of the pipe
+3. Use the Pipe into the `product-list.component.html` ([Pipe documentation](https://angular.io/guide/pipes#pipes))
+4. Enhance the `searchProduct` pipe to find in all `String` values of the given array (instead of only into the `productName`). It means that you not receive only `Product[]` but `any[]`!
 
-## 06 - More on components
-
-
-
-*Working based on 05 source code*
-
-1. Develop the `productFilter` pipe and use it into the product-list view.
-2. Use Component lifecycle to `console.log` a message into the `onInit` event
-3. Add specific style for the product-list component
-4. Add filter to product information (eg: currency, uppercase, etc.)
-
-## 07 - Building Nested Component
+## 06 - More on components: Nested Component
 
 *Working based on 06 source code*
 
@@ -206,6 +195,7 @@ The text should be adapted to the current stage: `Show the images` or `Hide the 
 4. Set-up `ratingClicked` output into `starComponent`
 5. Listen `ratingClicked` event from `ProductListComponent`
 
+<details><summary>More later 👀</summary>
 ## 08 - Services and dependency injection
 
 *Working based on 07 source code*
@@ -307,3 +297,5 @@ No challenge here!
 ## 17 - Data Store with @ngrx/store
 
 *Working based on 15 source code*
+
+</details>
