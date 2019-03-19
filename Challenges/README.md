@@ -185,6 +185,8 @@ src/
 3. Use the Pipe into the `product-list.component.html` ([Pipe documentation](https://angular.io/guide/pipes#pipes))
 4. Enhance the `searchProduct` pipe to find in all `String` values of the given array (instead of only into the `productName`). It means that you not receive only `Product[]` but `any[]`!
 
+**SOLUTION:** [:octocat: step-05 branch](https://github.com/blongearet/angular-course-app/pull/5)
+
 ## 06 - More on components: Nested Component
 
 *Working based on 06 source code*
@@ -196,6 +198,7 @@ src/
 5. Listen `ratingClicked` event from `ProductListComponent`
 
 <details><summary>More later 👀</summary>
+
 ## 08 - Services and dependency injection
 
 *Working based on 07 source code*
