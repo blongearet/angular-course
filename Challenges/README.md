@@ -219,7 +219,7 @@ src/
 
 ## 08 - Observables
 
-Please find examples there https://github.com/blongearet/angular-course/blob/master/Challenges/observables
+Please find examples there https://github.com/blongearet/angular-course/blob/master/Challenges/observable
 
 ## 09 - Retrieving data Using HTTP
 
