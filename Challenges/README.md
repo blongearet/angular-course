@@ -213,6 +213,7 @@ src/
 2. Feed the `Product` class by moving the existing Product interface into this Class file.
 3. Feed the `ProductService` by moving the collection used into the `ProductListComponent`.
 4. Write a public `getProducts` method to access to this products array
+5. Consume this methods into the `ProductListComponent`
 
 **SOLUTION:** [:octocat: step-07 branch](https://github.com/blongearet/angular-course-app/pull/7)
 
