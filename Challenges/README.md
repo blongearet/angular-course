@@ -291,13 +291,18 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
 
 2. Import the `HttpClientModule` into the `AppModule`
     
-3. Inject `HttpClient` into our `ProductService` and Update the `getProducts()` method to make a `get` call to our API Service `http://localhost:3000/products`
+3. Use the data from the API
 
-4. Use `RxJS` methods:
-    1. `do` to `console.log` the JSON Object
-    2. `catch` to attach a method to handle errors
-    
-5. Change into `ProductListComponent` the way we retrieve the data from our `ProductService`
+    1. Inject `HttpClient` into our `ProductService`
+    2. Create a fetch method to get data from the API (`http://localhost:3000/products`) and store them into the private property `products`
+    3. Use `RxJS` methods to prepare and assign the data (`do`, `catch`, etc.) 
+
+4. Consume Observable instead of flat array
+
+    1. Transform the private `products` property from a `Product[]` into a `BehaviorSubject<Product[]>`
+    2. Transform the `getProducts(): Product[]` into a `getProducts(): Observable<Product[]>`
+    3. Consume this observable into the `ProductListComponent` using the `| async` pipe
+    4. To check if it works, you can add a button to refresh the data into any component of the application!
 
 <details><summary>More later 👀</summary>
 
