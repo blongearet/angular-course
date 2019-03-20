@@ -291,7 +291,7 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
 
 2. Import the `HttpClientModule` into the `AppModule`
     
-3. Inject `Http` into our `ProductService`
+3. Inject `HttpClient` into our `ProductService`
 
 4. Update the `getProducts()` method to make a `get` call to our API Service `http://localhost:3000/products`
 
