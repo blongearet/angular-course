@@ -217,7 +217,11 @@ src/
 
 **SOLUTION:** [:octocat: step-07 branch](https://github.com/blongearet/angular-course-app/pull/7)
 
-## 08 - Retrieving data Using HTTP
+## 08 - Observables
+
+Please find examples there https://github.com/blongearet/angular-course/blob/master/Challenges/observables
+
+## 09 - Retrieving data Using HTTP
 
 *Start from [step-07 branch](https://github.com/blongearet/angular-course-app/tree/step-07)*
 
