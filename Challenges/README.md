@@ -199,21 +199,24 @@ src/
 4. Create an `@Output` property called `ratingClicked` into the `starComponent` which will return the new value of the rating.
 5. Listen the created `ratingClicked` event into the `ProductListComponent` to update the value into the component. 
 
+**SOLUTION:** [:octocat: step-06 branch](https://github.com/blongearet/angular-course-app/pull/6)
+
+## 07 - Services and dependency injection
+
+*Start from [step-06 branch](https://github.com/blongearet/angular-course-app/tree/step-06)*
+
+1. Create a service and a class
+
+    1. Create a new angular service called `ProductService` in the following path `shared/model/product`
+    2. Create a new class called `Product` in the same folder
+
+2. Feed the `Product` class by moving the existing Product interface into this Class file.
+3. Feed the `ProductService` by moving the collection used into the `ProductListComponent`.
+4. Write a public `getProducts` method to access to this products array
+
+**SOLUTION:** [:octocat: step-07 branch](https://github.com/blongearet/angular-course-app/pull/7)
 
 <details><summary>More later 👀</summary>
-
-## 08 - Services and dependency injection
-
-*Working based on 07 source code*
-
-1. Create a new angular service called `ProductService`
-
-`$ ng generate service shared/models/product`
-
-2. Ensure that it will be declared at our appModule level
-3. Move the IProduct interface and the products array from our `productListComponent` to this new service
-4. Write a public `getProducts` method to access to this products array
-5. [OPTIONAL]: Write a public `getObservableProducts` which return an Observable
 
 ## 09 - Retrieving data Using HTTP
 
