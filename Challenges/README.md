@@ -291,15 +291,13 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
 
 2. Import the `HttpClientModule` into the `AppModule`
     
-3. Inject `HttpClient` into our `ProductService`
+3. Inject `HttpClient` into our `ProductService` and Update the `getProducts()` method to make a `get` call to our API Service `http://localhost:3000/products`
 
-4. Update the `getProducts()` method to make a `get` call to our API Service `http://localhost:3000/products`
-
-5. Use `RxJS` methods:
+4. Use `RxJS` methods:
     1. `do` to `console.log` the JSON Object
     2. `catch` to attach a method to handle errors
     
-6. Change into `ProductListComponent` the way we retrieve the data from our `ProductService`
+5. Change into `ProductListComponent` the way we retrieve the data from our `ProductService`
 
 <details><summary>More later 👀</summary>
 
