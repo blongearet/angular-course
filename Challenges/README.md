@@ -217,6 +217,89 @@ src/
 
 **SOLUTION:** [:octocat: step-07 branch](https://github.com/blongearet/angular-course-app/pull/7)
 
+## 08 - Retrieving data Using HTTP
+
+*Start from [step-07 branch](https://github.com/blongearet/angular-course-app/tree/step-07)*
+
+1. Set up the local server using the (`json-server`)[https://github.com/typicode/json-server] module
+
+    1. Install the package using npm ▶ `$ npm install --save json-server`
+
+    2. Create a npm script to easily run the server by adding `"api": "json-server --watch db.json` into the scripts part of `package.json`. You will be able to run `npm run api`to launch the API.
+
+    3. Create a `db.json` file at the root of the project with the following JSON
+    
+```{
+   "products": [
+       {
+           "id": 1,
+           "productName": "Leaf Rake",
+           "productCode": "GDN-0011",
+           "releaseDate": "March 19, 2016",
+           "description": "Leaf rake with 48-inch wooden handle.",
+           "price": 19.95,
+           "starRating": 3.2,
+           "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+       },
+       {
+           "id": 2,
+           "productName": "Garden Cart",
+           "productCode": "GDN-0023",
+           "releaseDate": "March 18, 2016",
+           "description": "15 gallon capacity rolling garden cart",
+           "price": 32.99,
+           "starRating": 4.2,
+           "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+       },
+       {
+           "id": 5,
+           "productName": "Hammer",
+           "productCode": "TBX-0048",
+           "releaseDate": "May 21, 2016",
+           "description": "Curved claw steel hammer",
+           "price": 8.9,
+           "starRating": 4.8,
+           "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+       },
+       {
+           "id": 8,
+           "productName": "Saw",
+           "productCode": "TBX-0022",
+           "releaseDate": "May 15, 2016",
+           "description": "15-inch steel blade hand saw",
+           "price": 11.55,
+           "starRating": 3.7,
+           "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+       },
+       {
+           "id": 10,
+           "productName": "Video Game Controller",
+           "productCode": "GMG-0042",
+           "releaseDate": "October 15, 2015",
+           "description": "Standard two-button video game controller",
+           "price": 35.95,
+           "starRating": 4.6,
+           "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+       }
+     ]
+}
+```
+
+2. Import the `HttpModule` into the `AppModule` (if not already done)
+
+    1. Install the `@angular/http` module as a dependency
+    2. Import the `HttpModule` into our `AppModule`
+    
+3. Inject `Http` into our `ProductService`
+
+4. Update the `getProducts()` method to make a `get` call to our API Service `http://localhost:3000/products`
+
+5. Use `RxJS` methods:
+    1. `do` to `console.log` the JSON Object
+    2. `catch` to attach a method to handle errors
+    
+6. Change into `ProductListComponent` the way we retrieve the data from our `ProductService`
+
 <details><summary>More later 👀</summary>
 
 ## 09 - Retrieving data Using HTTP
