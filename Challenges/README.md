@@ -289,10 +289,7 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
 }
 ```
 
-2. Import the `HttpModule` into the `AppModule` (if not already done)
-
-    1. Install the `@angular/http` module as a dependency
-    2. Import the `HttpModule` into our `AppModule`
+2. Import the `HttpClientModule` into the `AppModule`
     
 3. Inject `Http` into our `ProductService`
 
