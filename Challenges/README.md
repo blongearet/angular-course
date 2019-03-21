@@ -227,9 +227,9 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
 
 1. Set up the local server using the (`json-server`)[https://github.com/typicode/json-server] module
 
-    1. Install the package using npm ▶ `$ npm install --save json-server`
+    1. Install the package using npm ▶ `$ npm install --save-dev json-server`
 
-    2. Create a npm script to easily run the server by adding `"api": "json-server --watch db.json` into the scripts part of `package.json`. You will be able to run `npm run api`to launch the API.
+    2. Create a npm script to easily run the server by adding `"api": "json-server --watch db.json"` into the scripts part of `package.json`. You will be able to run `npm run api`to launch the API.
 
     3. Create a `db.json` file at the root of the project with the following JSON
     
