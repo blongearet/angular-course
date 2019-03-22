@@ -346,7 +346,7 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
 3. Develop the `ProductDetailComponent` to display real product detail information by retrieving the product from our `ProductService`
 4. Implement a Guard to check the validity of given `id`
 
-**SOLUTION:** [:octocat: step-11 branch](https://github.com/blongearet/angular-course-app/pull/10)
+**SOLUTION:** [:octocat: step-11 branch](https://github.com/blongearet/angular-course-app/pull/11)
 
 <details><summary>More later 👀</summary>
 
