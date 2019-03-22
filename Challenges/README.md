@@ -345,6 +345,13 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
 2. Develop a method `getProductById(id: number)` in our `ProductService` which is plugged on our single source of truth `products$`
 3. Develop the `ProductDetailComponent` to display real product detail information by retrieving the product from our `ProductService`
 4. Implement a Guard to check the validity of given `id`
+5. Let's start an Authentication guard
+
+    1. Create `LoginComponent` & `AuthService` in a `auth` folder (next to `products`)
+    2. Design a simple button into `LoginComponent` which will set a variable `isLogged` to `true` in the `AuthService`
+    3. Create route for the login part
+    4. Create two `CanActivate`  guards to check if the current user is logged or not
+    5. Set guard on the route to protect them
 
 **SOLUTION:** [:octocat: step-11 branch](https://github.com/blongearet/angular-course-app/pull/11)
 
