@@ -303,49 +303,56 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
     2. Transform the `getProducts(): Product[]` into a `getProducts(): Observable<Product[]>`
     3. Consume this observable into the `ProductListComponent` using the `| async` pipe
     4. To check if it works, you can add a button to refresh the data into any component of the application!
-
-<details><summary>More later 👀</summary>
-
-## 09 - Retrieving data Using HTTP
-
-*Working based on 08 source code*
-
-1. Import the `HttpModule` into the `AppModule` (if not already done)
-    1. Install the `@angular/http` module
-    3. Import the `HttpModule` into our `AppModule`
-2. Inject `Http` into our `ProductService`
-3. Update the `getProducts()` method to make a `get` call to our API Service `http://localhost:3000/products`
-4. Use `RxJS` methods:
-    1. `map` to convert the string result into a JSON Object
-    2. `do` to `console.log` the JSON Object
-    3. `catch` to attach a method to handle errors
-5. Change into `ProductListComponent` the way we retrieve the data from our `ProductService`
-
+    
+**SOLUTION:** [:octocat: step-09 branch](https://github.com/blongearet/angular-course-app/pull/8)
+    
+    
 ## 10 - Navigation and Routing Basics
 
-*Working based on 09 source code*
+*Start from [step-09 branch](https://github.com/blongearet/angular-course-app/tree/step-09)*
 
-1. Create a simple `ProductDetailComponent` and a `WelcomeComponent` with a basic template 
-2. Import the `RouterModule` into the `AppModule` (if not already there)
-    1. Install the `@angular/router` module
-    2. Import the `RouterModule` into our `AppModule`
-    3. Use the `RouterModule.forRoot([])` syntax to describe the application's routes (Note that `RouterModule.forChild([]) is used in angular sub-module of our application)
-3. Add the `<router-outlet></router-outlet>` instead of our `app-product-list` directive into our `AppRootComponent`
+**ℹ We'll work on the created components `ProductDetailComponent` and `WelcomeComponent`. Generate them if not already exists**
+
+1. If you didn't generate the angular project with routing, please follow these steps, skip otherwise: 
+
+    1. Install as a dependency `@angular/router`
+    2. Create a `AppRoutingModule` next to your `AppModule`
+    3. Import the `RouterModule.forRoot(routes)` en export the `RouterModule`
+    4. `routes` is a variable where we'll set route definitions
+    5. Import your `AppRoutingModule` into you `AppModule`
+ 
+2. Set the value of `routes` into your `AppRoutingModule` (it's a `Route[]` or a `Routes` type)
+
+    1. Welcome page: ''
+    2. Product parent page which handle the `/products` route. You have to create a new component called `ProductComponent` which will be the parent of all product's related pages.
+    3. Product List page: '/products'
+    4. Product Detail page: '/products/:id'
+    5. Product Edit page: '/products/:id/edit'
+   
+3. Add the `<router-outlet></router-outlet>` instead of our `<app-product-list></app-product-list>` directive into our `AppComponent` template as inn the `ProductComponent` template
 4. Add a menu to navigate through Home and Product List pages using the directive `[routerLink]` directive
 5. Add to the `ProductDetailComponent` two link:
   - One to go back to `/products` route
   - an other to go to the next product detail page
-
-**FROM THIS POINT IT NEEDS TO BE UPDATED!**
-
+  
+**SOLUTION:** [:octocat: step-10 branch](https://github.com/blongearet/angular-course-app/pull/9)
+  
 ## 11 - Navigating and Routing Advanced
-
-*Working based on 10 source code*
-
+  
+*Start from [step-10 branch](https://github.com/blongearet/angular-course-app/tree/step-109)*
+  
 1. Read `id` parameter from url in `ProductDetailComponent` using `ActivatedRoute`
 2. Develop a method `getProductById(id:number)` in our `ProductService`
 2. Develop the `ProductDetailComponent` to display real product detail information by retrieving the product from our `ProductService`
 3. Implement a Guard to check the validity of given `id`
+
+<details><summary>More later 👀</summary>
+
+
+
+**FROM THIS POINT IT NEEDS TO BE UPDATED!**
+
+
 
 ## 12 - Forms
 
