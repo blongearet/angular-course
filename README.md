@@ -1,5 +1,7 @@
 # angular-course
 
+Slack invitation link: https://bit.ly/2UN0uL2
+
 Welcome to the tower control of this training session!
 
 Please feel free to open an [Issue](https://github.com/blongearet/angular-course/issues/new) 🚀 
