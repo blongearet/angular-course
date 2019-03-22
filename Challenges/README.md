@@ -339,7 +339,7 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
   
 ## 11 - Navigating and Routing Advanced
   
-*Start from [step-10 branch](https://github.com/blongearet/angular-course-app/tree/step-109)*
+*Start from [step-10 branch](https://github.com/blongearet/angular-course-app/tree/step-10)*
   
 1. Retrieve the `id` parameter from url in `ProductDetailComponent` using the Angular Service `ActivatedRoute`
 2. Develop a method `getProductById(id: number)` in our `ProductService` which is plugged on our single source of truth `products$`
@@ -355,33 +355,39 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
 
 **SOLUTION:** [:octocat: step-11 branch](https://github.com/blongearet/angular-course-app/pull/11)
 
-<details><summary>More later 👀</summary>
-
-
-
-**FROM THIS POINT IT NEEDS TO BE UPDATED!**
-
-
-
 ## 12 - Forms
 
-*Working based on 11 source code*
+*Start from [step-11 branch](https://github.com/blongearet/angular-course-app/tree/step-11)*
 
-1. Create a new component called `ProductEditComponent` with a basic edit form of a product
-2. Use `template driven form`
-    1. Use `[(ngModel)]` on each input to create a two-way binding
-    2. Add the hash operator to retrieve the current `ngModel` state (eg. `#nameInput`)
-    3. Display an error box below based on `nameInput.valid`
-    4. Implement a `(ngSubmit)` method to execute a function when user submit
-3. Use `model driven form`
-    1. Update the form to use `[ngFormModel]=formName` on the `<form>` DOM node
-    2. Changes all `[(ngModel)]` into a `ngControl="inputName"`
-    3. Import `ReactiveFormsModule` in your current angular module
-    4. Import `FormBuilder` and `Validators` from `@angular/forms` into your component
-    5. Inject into the component the `FormBuilder`
-    6. Create a public `formName` variable by using `FormBuilder`
-    7. Describe your forms using: `ControlGroup`
-    8. Add some validators (custom?)
+**ℹ We'll work on the created components `ProductEditComponent`. Generate them if not already exists.**
+
+### Template driven forms
+
+1. Use `[(ngModel)]` on each input to create a two-way binding
+2. Use the `hash` keyword to easily retrieve your form input into the controller (`<input #nameInput ...>`)
+3. Display an error message under the field using the `*ngIf="nameInput.valid"`
+4. Implement an event binding on the form using `<form ... (ngSubmit)="onSubmit()"`
+
+### Reactive forms
+    
+Easiest and future-proof way is to use Reactive forms.
+
+1. Import the `ReactiveFormsModule` into our `AppModule`
+2. Inject the `FormBuilder` service into our `ProductEditComponent` to easily design our FormGroup/FormControl
+3. Create a property `productForm`
+4. Assign your FormGroup to declare all the fields, and use some `Validators` to check values 
+5. Once your FormGroup is designed, connect it to the `<form ...>` HTML markup using the `[ngFormModel]="productForm` directive
+6. Then connect each input to the FormControl using the key like `<input formControlName="productName" ...>`
+7. You can display
+7. Design a `<button type="submit">Submit</button>` to submit the form and catch the ngOnSubmit event (as in 1.4)
+8. In the called method, you should check if the form is valid and then you can call a method `save()` on your ProductService 
+9. Design the `ProductService.save(payload: IProduct)` method to make a PUT request to the server
+
+**SOLUTION:** [:octocat: step-12 branch](https://github.com/blongearet/angular-course-app/pull/12)
+
+<details><summary>More later 👀</summary>
+
+**FROM THIS POINT IT NEEDS TO BE UPDATED!**
 
 ## 13 - Angular Modules
 
