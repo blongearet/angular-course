@@ -378,10 +378,10 @@ Easiest and future-proof way is to use Reactive forms.
 4. Assign your FormGroup to declare all the fields, and use some `Validators` to check values 
 5. Once your FormGroup is designed, connect it to the `<form ...>` HTML markup using the `[ngFormModel]="productForm` directive
 6. Then connect each input to the FormControl using the key like `<input formControlName="productName" ...>`
-7. You can display
-7. Design a `<button type="submit">Submit</button>` to submit the form and catch the ngOnSubmit event (as in 1.4)
-8. In the called method, you should check if the form is valid and then you can call a method `save()` on your ProductService 
-9. Design the `ProductService.save(payload: IProduct)` method to make a PUT request to the server
+7. You can display some error boxes based on status of FormControl / FormGroup
+8. Design a `<button type="submit">Submit</button>` to submit the form and catch the ngOnSubmit event (as in 1.4)
+9. In the called method, you should check if the form is valid and then you can call a method `save()` on your ProductService 
+10. Design the `ProductService.save(payload: IProduct)` method to make a PUT request to the server
 
 **SOLUTION:** [:octocat: step-12 branch](https://github.com/blongearet/angular-course-app/pull/12)
 
