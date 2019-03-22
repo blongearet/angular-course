@@ -341,10 +341,12 @@ Please find examples there https://github.com/blongearet/angular-course/blob/mas
   
 *Start from [step-10 branch](https://github.com/blongearet/angular-course-app/tree/step-109)*
   
-1. Read `id` parameter from url in `ProductDetailComponent` using `ActivatedRoute`
-2. Develop a method `getProductById(id:number)` in our `ProductService`
-2. Develop the `ProductDetailComponent` to display real product detail information by retrieving the product from our `ProductService`
-3. Implement a Guard to check the validity of given `id`
+1. Retrieve the `id` parameter from url in `ProductDetailComponent` using the Angular Service `ActivatedRoute`
+2. Develop a method `getProductById(id: number)` in our `ProductService` which is plugged on our single source of truth `products$`
+3. Develop the `ProductDetailComponent` to display real product detail information by retrieving the product from our `ProductService`
+4. Implement a Guard to check the validity of given `id`
+
+**SOLUTION:** [:octocat: step-11 branch](https://github.com/blongearet/angular-course-app/pull/10)
 
 <details><summary>More later 👀</summary>
 
