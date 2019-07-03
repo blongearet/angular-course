@@ -1,6 +1,6 @@
 # angular-course
 
-Slack invitation link: https://bit.ly/2UN0uL2
+Slack invitation link: https://join.slack.com/t/nomade-advanced/shared_invite/enQtNjgzNTQzMjk0NzczLTViMTZmNmY3YTkwNWIzMTBhZTRjYjZiOGVjYzNlMTQyY2YxN2I4NGQzMmFiZmYzOTZjOWYwZDVhZmUzZjRhMTc
 
 Welcome to the tower control of this training session!
 
