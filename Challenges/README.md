@@ -158,7 +158,10 @@ src/
     2. Use `*ngIf` directive to show the table if there is at least one product in the array (you can use the else part to display a message in case of no product: [doc](https://angular.io/api/common/NgIf#showing-an-alternative-template-using-else))
     3. Use `*ngFor` directive on `<tr>` element to repeat this element as many times as products in the array
 
-4. Add a button to show/hide all images on the page (by using `(click)="toggleImage()"` for example)
+4. Take care of our fabulous images
+    1. Add a button to show/hide all images on the page (by using `(click)="toggleImage()"` for example)
+    2. Use `*ngIf` to show/hide the image column in the table, depending on the `showImages`variable created before
+    3. Link with a property variable (`[src]`) the image src attribute
 
 5. Implement a search field to filter products shown in the table. To bind an input with a variable you should do:
 
