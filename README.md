@@ -21,7 +21,7 @@ You can also find answer by looking at the [blongearet/angular-course-app](https
 
 ## Ressources
 
-- [Google Drive](https://drive.google.com/drive/folders/1jqpE8lEOINh7sjIYvnfbsyVN_9Qu9Xak?usp=sharing)
+- [Google Drive](https://drive.google.com/drive/folders/1RNO9paha8eW4PIB4pGCXzruLEuaS25e1?usp=sharing)
 
 - [TypeScript repository](https://github.com/blongearet/angular-course-typescript)
 
