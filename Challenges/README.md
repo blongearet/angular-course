@@ -59,11 +59,13 @@ You have to fix all tests (should be green in the terminal window) by updating p
 
 No Challenge here but some commands to play with 💪.
 
+You must install `@angular/cli` globally to use `ng` command:
+
+`$ npm
+
 ### A. Creating a New Angular Application
 
-Two ways:
-- `ng init`: create a new app in the current directory
-- `ng new`: create a new directory & run `ng init` inside the new directory
+`ng new`: create a new directory & initialize the angular project inside the new directory
 
 🔖 [CLI doc for ng new](https://angular.io/cli/new)
 
