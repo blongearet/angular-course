@@ -2,7 +2,7 @@
 
 List all our challenges for this Angular course
 
-1. [Introduction](./01 - Introduction.md)
-2. [Typescript](./02 - TypeScript.md)
-3. [Play with Angular CLI](./03 - Play with Angular CLI.md)
-4. [Introduction to Components](./04 - Introduction to components.md)
+1. [Introduction](./01%20-%20Introduction.md)
+2. [Typescript](./02%20-%20TypeScript.md)
+3. [Play with Angular CLI](./03%20-%20Play%20with%20Angular%20CLI.md)
+4. [Introduction to Components](./04%20-%20Introduction%20to%20components.md)
