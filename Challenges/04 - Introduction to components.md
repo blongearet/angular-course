@@ -27,3 +27,7 @@ src/
 ```
 
 **SOLUTION:** [:octocat: step-04 branch](https://github.com/blongearet/angular-course-app/pull/1)
+
+## Next step
+
+[05 - Templates, Interpolation & Directives](./05%20-%20Templates,%20Interpolation%20&%20Directives)
