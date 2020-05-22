@@ -83,11 +83,11 @@
 
 `<input [(ngModel)]="searchTerm" type="text />`
 
-**SOLUTION:** [:octocat: step-05 branch](https://github.com/blongearet/angular-course-app/pull/2/files)
+**SOLUTION:** [:octocat: step-05 branch]()
 
 6. Go further
 
     1. Do a zoom by click on an image!
     2. Allow a product to have multiple images and display them as a caroussel with navigation buttons
 
-**SOLUTION "GO FURTHER":** [:octocat: step-05-more branch](https://github.com/blongearet/angular-course-app/pull/4/files)
+**SOLUTION "GO FURTHER":** [:octocat: step-05-more branch]()

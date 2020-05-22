@@ -26,4 +26,4 @@ src/
     welcome/
 ```
 
-**SOLUTION:** :octocat: step-03 branch (@TODO PR link)
+**SOLUTION:** [:octocat: step-04 branch](https://github.com/blongearet/angular-course-app/pull/1)

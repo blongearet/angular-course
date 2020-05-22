@@ -19,3 +19,7 @@ npm run test-01
 (and update the 01 by the targeted step)
 
 You have to fix all tests (should be green in the terminal window) by updating part specified by a `// _` or a `_`.
+
+## Next step
+
+[03 - Play with Angular CLI](./03%20-%20Play%20with%20Angular%20CLI.md)

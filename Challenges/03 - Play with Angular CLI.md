@@ -76,3 +76,7 @@ You can specify a target like development, production or custom environment to p
 🔖 [CLI doc for ng build](https://angular.io/cli/build)
 
 ❓ Run `$ ng build --help` to see options
+
+## Next step
+
+[03 - Introduction to Components](./04%20-%20Introduction%20to%20components.md)

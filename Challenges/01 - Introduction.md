@@ -28,3 +28,7 @@ ng serve
 ## Bonus
 
 Take a look at https://yarnpkg.com to get a faster Node Package Manager
+
+## Next step
+
+[02 - Typescript](./02%20-%20TypeScript.md)
