@@ -1,4 +1,4 @@
-# 04 - Templates, Interpolation & Directives
+# 05 - Templates, Interpolation & Directives
 
 *Start from [step-04 branch](https://github.com/blongearet/angular-course-app/tree/step-04)*
 
