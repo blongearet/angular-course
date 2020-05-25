@@ -83,7 +83,7 @@
 
 `<input [(ngModel)]="searchTerm" type="text />`
 
-**SOLUTION:** :octocat: step-05 branch (awaiting demo 🚀)
+**SOLUTION:** :octocat: [step-05 branch](https://github.com/blongearet/angular-course-app/pull/2)
 
 6. Go further
 
