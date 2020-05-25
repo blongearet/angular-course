@@ -8,4 +8,4 @@ List all our challenges for this Angular course
 4. [Introduction to Components](./04%20-%20Introduction%20to%20components.md)
 5. [Templates, Interpolation & Directives](./05%20-%20Templates,%20Interpolation%20&%20Directives.md)
 6. [Data binding & Pipes](./06%20-%20Data%20binding%20&%20Pipes.md)
-7. [More on component](./07%20-%More%20on%20component.md)
+7. [More on component](./07%20-%20More%20on%20component.md)

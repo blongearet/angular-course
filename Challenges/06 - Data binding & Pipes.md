@@ -12,4 +12,4 @@
 
 ## Next step
 
-[07 - More on component](./07%20-%More%20on%20component.md)
+[07 - More on component](./07%20-%20More%20on%20component.md)
