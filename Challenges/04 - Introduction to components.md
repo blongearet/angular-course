@@ -30,4 +30,4 @@ src/
 
 ## Next step
 
-[05 - Templates, Interpolation & Directives](./05%20-%20Templates,%20Interpolation%20&%20Directives)
+[05 - Templates, Interpolation & Directives](./05%20-%20Templates,%20Interpolation%20&%20Directives.md)

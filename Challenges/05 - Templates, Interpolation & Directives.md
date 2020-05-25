@@ -91,3 +91,7 @@
     2. Allow a product to have multiple images and display them as a caroussel with navigation buttons
 
 **SOLUTION "GO FURTHER":** :octocat: step-05-more branch (awaiting demo 🚀)
+
+## Next step
+
+[06 - Data binding & Pipes](./06%20-%20Data%20binding%20&%20Pipes.md)
