@@ -1,3 +1,7 @@
+/**
+ * Iterate through all element in a collection
+ */
+
 const arr = [10, 20, 30, 40, 50, 60];
 
 console.log('before');

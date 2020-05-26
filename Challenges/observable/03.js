@@ -1,3 +1,7 @@
+/**
+ * Be aware of asynchronous response by using callbacks
+ */
+
 const res = fetch(
     'http://jsonplaceholder.typicode.com/users/1'
 ).then(r => r.json());

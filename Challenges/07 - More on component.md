@@ -14,3 +14,7 @@
     - update the `ProductListComponent` template to use banana in the box `[(rating)]` in the star component custom HTML element
 
 **SOLUTION:** :octocat: [step-07 branch](https://github.com/blongearet/angular-course-app/pull/3)
+
+## Next step
+
+[08 - Services and dependency injection](./08%20-%20Services%20and%20dependency%20injection.md)

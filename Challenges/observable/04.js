@@ -1,3 +1,10 @@
+/**
+ * Consume stream information
+ * 
+ * /!\ This code doesn't compile as getReadableStreamSomehow() is
+ * undefined. Just an example about the syntax.
+ */
+
 const readable = getReadableStreamSomehow();
 
 function nextDataCallback(chunk) {
