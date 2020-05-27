@@ -63,7 +63,6 @@
            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
        }
      ]
-}
 ```
 
 2. Import the `HttpClientModule` into the `AppModule`
@@ -72,7 +71,7 @@
 
     3.1. Inject `HttpClient` into our `ProductService` with the name `http`
 
-    ```
+    ```ts
     constructor(private http: HttpClient) {}
     ```
 
@@ -82,7 +81,7 @@
 
     3.2.2 Use the `HttpClient` method to get value from the API [link Angular](https://angular.io/tutorial/toh-pt6#get-heroes-with-httpclient)
 
-    ```
+    ```ts
     public fetch() {
         this.http.get<IProduct[]>('http://localhost:3000/products').subscribe()
     }
@@ -90,7 +89,7 @@
 
     3.2.3 Instanciate `IProduct[]` into a `Product[]`
 
-    ```
+    ```ts
     import { map } from 'rxjs/operators'
 
     //...
@@ -102,7 +101,24 @@
     }
     ```
 
+    > /!\ map method for RxJS (observable) will iterate over all events
+
+    > /!\ map method for array will iterate over all items!
+
     3.3. Use `RxJS` methods to prepare and assign the data (`tap`, `catch`, etc.)
+
+    ```ts
+    import { map, tap } from 'rxjs/operators'
+
+    //...
+
+    public fetch() {
+        this.http.get<IProduct[]>('http://localhost:3000/products').pipe(
+            map(products => products.map(product => new Product(product))),
+            tap(products => console.log(`Products (${product.length})`))
+        ).subscribe()
+    }
+    ```
 
 4. Consume Observable instead of flat array
 
