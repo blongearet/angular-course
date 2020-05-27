@@ -10,7 +10,8 @@
 
     3. Create a `db.json` file at the root of the project with the following JSON
     
-```{
+```json
+{
    "products": [
        {
            "id": 1,
@@ -63,6 +64,7 @@
            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
        }
      ]
+}
 ```
 
 2. Import the `HttpClientModule` into the `AppModule`
@@ -101,9 +103,9 @@
     }
     ```
 
-    > /!\ map method for RxJS (observable) will iterate over all events
+    > ⚠ map method for RxJS (observable) will iterate over all events
 
-    > /!\ map method for array will iterate over all items!
+    > ⚠ map method for array will iterate over all items!
 
     3.3. Use `RxJS` methods to prepare and assign the data (`tap`, `catch`, etc.)
 
@@ -120,9 +122,13 @@
     }
     ```
 
-4. Consume Observable instead of flat array
+4. Consume Observable instead of flat array in our `ProductListComponent`
 
-    1. Transform the private `products` property from a `Product[]` into a `BehaviorSubject<Product[]>`
+    1. We need a unique source of truth into our `ProductService`
+
+    1.1. Create a private property `products` into out `ProductService`
+    1.2. This property is a `BehaviorSubject` (What is a)
+
     2. Transform the `getProducts(): Product[]` into a `getProducts(): Observable<Product[]>`
     3. Consume this observable into the `ProductListComponent` using the `| async` pipe
     4. To check if it works, you can add a button to refresh the data into any component of the application!
