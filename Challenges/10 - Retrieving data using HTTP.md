@@ -2,7 +2,7 @@
 
 *Start from [step-08 branch](https://github.com/blongearet/angular-course-app/tree/step-07)*
 
-1. Set up the local server using the (`json-server`)[https://github.com/typicode/json-server] module
+1. Set up the local server using the [`json-server`](https://github.com/typicode/json-server) module
 
     1. Install the package using npm ▶ `$ npm install --save-dev json-server`
 
@@ -70,9 +70,39 @@
     
 3. Use the data from the API
 
-    1. Inject `HttpClient` into our `ProductService`
-    2. Create a fetch method to get data from the API (`http://localhost:3000/products`) and store them into the private property `products`
-    3. Use `RxJS` methods to prepare and assign the data (`do`, `catch`, etc.) 
+    3.1. Inject `HttpClient` into our `ProductService` with the name `http`
+
+    ```
+    constructor(private http: HttpClient) {}
+    ```
+
+    3.2. Create a fetch method to get data from the API (`http://localhost:3000/products`)
+
+    3.2.1. Create a public `fetch` method that returns `void` in the `ProductService`
+
+    3.2.2 Use the `HttpClient` method to get value from the API [link Angular](https://angular.io/tutorial/toh-pt6#get-heroes-with-httpclient)
+
+    ```
+    public fetch() {
+        this.http.get<IProduct[]>('http://localhost:3000/products').subscribe()
+    }
+    ```
+
+    3.2.3 Instanciate `IProduct[]` into a `Product[]`
+
+    ```
+    import { map } from 'rxjs/operators'
+
+    //...
+
+    public fetch() {
+        this.http.get<IProduct[]>('http://localhost:3000/products').pipe(
+            map(products => products.map(product => new Product(product)))
+        ).subscribe()
+    }
+    ```
+
+    3.3. Use `RxJS` methods to prepare and assign the data (`tap`, `catch`, etc.)
 
 4. Consume Observable instead of flat array
 
