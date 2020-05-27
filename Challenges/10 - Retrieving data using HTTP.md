@@ -63,7 +63,7 @@
            "starRating": 4.6,
            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
        }
-     ]
+    ]
 }
 ```
 
@@ -126,10 +126,30 @@
 
     1. We need a unique source of truth into our `ProductService`
 
-    1.1. Create a private property `products` into out `ProductService`
-    1.2. This property is a `BehaviorSubject` (What is a)
+        1.1. Create a private property `products` into out `ProductService`
+        1.2. This property is a `BehaviorSubject` [BehaviorSubjet vs Observable stackoverflow](https://stackoverflow.com/a/40231605)
 
-    2. Transform the `getProducts(): Product[]` into a `getProducts(): Observable<Product[]>`
+        To summarize, a `BehaviorSubject` is an `Observable` with more capabilities like:
+
+        - Send new event using the method `next(event)`
+        - Have a default value
+
+        ```ts
+        import { Observable, BehaviorSubject } from 'rxjs';
+
+        //...
+
+        private products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([])
+        ```
+
+    2. Return an `Observable<Product[]>` instead of a `IProduct[]`
+    
+        2.1. Transform the method `getProducts(): Product[]` into a `getProducts$(): Observable<Product[]>`
+
+        ```ts
+        
+        ```
+
     3. Consume this observable into the `ProductListComponent` using the `| async` pipe
     4. To check if it works, you can add a button to refresh the data into any component of the application!
     
