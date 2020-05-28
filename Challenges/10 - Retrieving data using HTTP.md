@@ -79,7 +79,7 @@
 
     3.2. Create a fetch method to get data from the API (`http://localhost:3000/products`)
 
-    3.2.1. Create a public `fetch` method that returns `void` in the `ProductService`
+    3.2.1. Create a public `fetch` method that returns `void` in the `ProductService` and call it into the constructor
 
     3.2.2 Use the `HttpClient` method to get value from the API [link Angular](https://angular.io/tutorial/toh-pt6#get-heroes-with-httpclient)
 
@@ -142,6 +142,31 @@
 
     private _products: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([])
     ```
+   
+    4.1.3 Propagate the Product list to the BehaviorSubject each time we do a fetch
+    
+    ```ts
+    public fetch() {
+        this.http.get<IProduct[]>('http://localhost:3000/products').pipe(
+            map(products => products.map(product => new Product(product))),
+            tap(products => console.log(`Products (${product.length})`)),
+            tap(products => this._products.next(products))
+        ).subscribe()
+    }
+    ``` 
+   
+   or, similar code can be to send the new product list in the subscribe method.
+    
+    ```ts
+    public fetch() {
+        this.http.get<IProduct[]>('http://localhost:3000/products').pipe(
+            map(products => products.map(product => new Product(product))),
+            tap(products => console.log(`Products (${product.length})`))
+        ).subscribe(
+           products => this._products.next(products)
+       )
+    }
+    ``` 
 
     4.2. Return an `Observable<Product[]>` instead of a `IProduct[]`
     
