@@ -40,7 +40,7 @@
     { path: 'products', 'component': ProductComponent, children: []}
     ```
     
-    2.3. Define all products children routes
+    2.1.3. Define all products children routes
     
     - Product List page: '/products'
     - Product Detail page: '/products/:id'
@@ -71,8 +71,8 @@
     
         ```html
         <div>
-            <a routerLink="/welcome" routerLinkActivate="activated">Welcome</a> -
-            <a routerLink="/products" routerLinkActivate="activated">Products</a>
+            <a routerLink="/welcome" routerLinkActive="activated">Welcome</a> -
+            <a routerLink="/products" routerLinkActive="activated">Products</a>
         </div>
         ```
 
@@ -99,4 +99,4 @@
     - One to go back to `/products` route
     - an other to go to the next product detail page
   
-**SOLUTION:** :octocat: step-10 branch (awaiting demo)
+**SOLUTION:** :octocat: [step-11 branch](https://github.com/blongearet/angular-course-app/pull/7)
