@@ -124,4 +124,4 @@
     4. Create two `CanActivate`  guards to check if the current user is logged or not
     5. Set guard on the route to protect them
 
-**SOLUTION:** :octocat: step-11 branch (Awaiting Demo 🚀)
+**SOLUTION:** :octocat: [step-11 branch](https://github.com/blongearet/angular-course-app/pull/8)
