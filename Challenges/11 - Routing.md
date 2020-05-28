@@ -48,9 +48,9 @@
     
     ```ts
     children: [
-       { path: '', 'component': ProductListComponent },
-       { path: ':id', 'component': ProductDetailComponent },
-       { path: ':id/edit', 'component': ProductDetailComponent } // This will change with implementing Forms
+       { path: '', component: ProductListComponent },
+       { path: ':id', component: ProductDetailComponent },
+       { path: ':id/edit', component: ProductDetailComponent } // This will change with implementing Forms
     ]
     ```
    
