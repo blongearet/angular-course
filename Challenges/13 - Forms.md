@@ -98,10 +98,16 @@ Easiest and future-proof way is to use Reactive forms.
     7.1. Display error next to the field to help user put valid data
     
     ```html
-    <div *ngIf="productName.invalid && (productName.dirty || productName.touched)">
-       <div *ngIf="productName.errors.required">
-           Product name is required
-       </div>
+    <div *ngIf="productForm.get('productName').invalid && (productForm.get('productName').dirty || productForm.get('productName').touched)">
+        <div *ngIf="productForm.get('productName').errors.required">
+            The name is required
+        </div>
+        <div *ngIf="productForm.get('productName').errors.minlength as minlength">
+            The name should be at least {{ minlength.requiredLength }} (actual: {{ minlength.actualLength }})
+        </div>
+        <div *ngIf="productForm.get('productName').errors.maxlength as maxlength">
+            The name should be {{ maxlength.requiredLength }} max length (actual: {{ maxlength.actualLength }})
+        </div>
     </div>
     ```
    
