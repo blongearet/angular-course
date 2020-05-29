@@ -81,19 +81,125 @@ Easiest and future-proof way is to use Reactive forms.
 5. Once your `FormGroup` is designed, connect it to the `<form ...>`
 
     ```html
-   <form [formGroup]="productForm"
+    <form [formGroup]="productForm">
+       <!-- ... -->
+    </form>
     ```
 
 6. Then connect each input to the FormControl using the key like `<input formControlName="productName" ...>`
 
     ```html
-   <input type="text" formControlName="productName" />
+   <input id="productName" type="text" formControlName="productName" />
    <!-- More inputs -->
     ```
    
 7. You can display some error boxes based on status of FormControl / FormGroup
-8. Design a `<button type="submit">Submit</button>` to submit the form and catch the ngOnSubmit event (as in 1.4)
-9. In the called method, you should check if the form is valid and then you can call a method `save()` on your ProductService 
-10. Design the `ProductService.save(payload: IProduct)` method to make a PUT request to the server
+
+    7.1. Display error next to the field to help user put valid data
+    
+    ```html
+    <div *ngIf="productName.invalid && (productName.dirty || productName.touched)">
+       <div *ngIf="productName.errors.required">
+           Product name is required
+       </div>
+    </div>
+    ```
+   
+   7.2. As angular set css classes to form & inputs update your CSS rules to help user
+
+8. Submit your form!
+
+    8.1. Add a submit button in your form
+    
+    ```html
+    <button type="submit">Save!</button>
+    ```
+   
+    8.2. Listen the submit event and execute a onSubmit method
+   
+    ```html
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+       <!-- ... -->
+    </form>
+    ```
+   
+   8.3. Disable the submit button while form is not valid
+   
+   ```html
+    <button type="submit" [disabled]="productForm.invalid">Save!</button>
+   ```
+
+9. Save the data!
+
+    Before save the data, you need to be sure that you form is valid.
+    
+    We disable the submit button, but by hitting "enter" it can also submit the form.
+    
+    9.1. Check if form is valid into the onSubmit method
+    
+    ```ts
+    @Component({ /* ... */ })
+    class ProductEditComponent {
+       //...
+       public onSubmit() {
+           if (this.productForm.valid) {
+               let data = this.productForm.value
+               // Save the data
+           }       
+       }
+    }
+    ```
+   
+   9.2. Call a ProductService.save method
+   
+   9.2.1. Inject the ProductService into the ProductEditComponent
+   
+    ```ts
+    @Component({ /* ... */ })
+    class ProductEditComponent {
+       constructor(fb: FormBuilder, public productService: ProductService)
+    }
+    ```
+   
+   9.2.2. Call the save method from ProductService
+   
+    ```ts
+    @Component({ /* ... */ })
+    class ProductEditComponent {
+       //...
+       public onSubmit() {
+           if (this.productForm.valid) {
+               let data = this.productForm.value
+               this.productService.save(data)
+           }       
+       }
+    }
+    ```
+
+10. Design the `ProductService.save(payload: IProduct)` method
+
+    The objective of this method is to save the payload to the server.
+    
+    In order to perform HTTP POST & PUT, the server can ask for custom headers. Here the `httpOptions` carry them.
+    
+    ```ts
+    export class ProductService {
+        public httpOptions = {
+          headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+        }
+    
+        public save(product: IProduct): Observable<IProduct> {
+            if(product.id === null) { // Create a product
+                return this.http.post<IProduct>('http://localhost:3000/products', product, this.httpOptions).pipe(
+                    tap(product => console.log(`New product: ${product.id}`))
+                )
+            } else { // Update a product
+                return this.http.put<IProduct>(`http://localhost:3000/products/${product.id}`, data, this.httpOptions).pipe(
+                    tap(product => console.log(`Edit product: ${product.id}`))
+                )
+            }
+        }
+    }
+    ```
 
 **SOLUTION:** :octocat: step-12 branch (awaiting demo)
