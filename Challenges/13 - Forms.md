@@ -208,4 +208,46 @@ Easiest and future-proof way is to use Reactive forms.
     }
     ```
 
-**SOLUTION:** :octocat: step-12 branch (awaiting demo)
+11. Feed the form with existing data (on edit case)
+   
+    We should get an `Observable<Product>` from our lovely method `getProductById$(id: number)` written in the `ProductService`.
+    
+    First we should get the id from the url (like in the step-12) and the related product.
+    
+    https://github.com/blongearet/angular-course-app/blob/step-12/src/app/product/product-detail/product-detail.component.ts#L22-L30
+    
+    11.1. Inject the `ActivatedRoute` service
+    
+    11.2. Copy/Paste from `ProductDetailComponent` pipes to retrieve the current URL id & the product data
+    
+    11.3. Instead of assign the observable to the variable `this.product$`, we'll subscribe to it in order to update the form.
+    
+    > ⚠ Each time you subscribe to an observable, you have to unsubscribe to avoid any memory leak
+    
+    ```ts
+    // ...
+    export class ProductEditComponent implements OnInit {
+        // ...
+        private productSubscription: Subscription // We'll use to store the subscription to destroy it later
+    
+        constructor(fb: FormBuilder, route: ActivatedRoute, public productService: ProductService) {
+            //...
+            this.productSubscription = currentId$.pipe(
+                switchMap(id => productService.getProductById$(id)),
+                filter(product => product instanceof Product)
+            ).subscribe(
+                product => this.productForm.setValue(product)
+            )
+        }
+    
+        ngOnDestroy() {
+            this.productSubscription.unsubscribe()
+        }
+    }
+    ```
+    
+    11.4. Set value of the FormGroup by using the `productForm.settValue(...)`
+    
+    As we check that the observable will only gives to us `Product` instance, we are able to safely setValue to the FormGroup.
+
+**SOLUTION:** :octocat: [step-12 branch](https://github.com/blongearet/angular-course-app/pull/9)
